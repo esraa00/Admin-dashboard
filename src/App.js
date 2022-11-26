@@ -10,7 +10,7 @@ function App() {
   return (
     <BrowserRouter>
       <Sidebar></Sidebar>
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Dashboard />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/users">
@@ -23,7 +23,7 @@ function App() {
           <Route path=":productId" element={<Single />}></Route>
           <Route path="new" element={<New />}></Route>
         </Route>
-      </Routes> */}
+      </Routes>
     </BrowserRouter>
   );
 }
