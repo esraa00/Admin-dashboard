@@ -14,7 +14,7 @@ import UserImage from '../../images/profile.jpg';
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarClosed, setIsSidebarClosed] = useState(true);
 
   const elements = ['dashboard', 'profile', 'products', 'orders', 'cupons'];
 
@@ -35,7 +35,9 @@ const Sidebar = () => {
         ></FontAwesomeIcon>
         <Link
           href={`/${element}`}
-          className={`sidebar__content-link ${isSidebarOpen ? 'active' : ''}`}
+          className={`sidebar__content-link ${
+            isSidebarClosed ? 'inactive' : ''
+          }`}
         >
           {element}
         </Link>
@@ -44,8 +46,8 @@ const Sidebar = () => {
   });
 
   return (
-    <div className={`sidebar ${isSidebarOpen ? 'active' : ''}`}>
-      <div className={`sidebar__header ${isSidebarOpen ? 'active' : ''}`}>
+    <div className={`sidebar ${isSidebarClosed ? 'inactive' : ''}`}>
+      <div className={`sidebar__header ${isSidebarClosed ? 'inactive' : ''}`}>
         <div className="sidebar__logo">
           <FontAwesomeIcon icon={MainLogo} className="sidebar__logo-icon" />
           <span className="sidebar__logo-name">Dashboard</span>
@@ -53,8 +55,8 @@ const Sidebar = () => {
         <div
           className="sidebar__nav-icon"
           onClick={() => {
-            setIsSidebarOpen((prevState) => {
-              return !isSidebarOpen;
+            setIsSidebarClosed((prevState) => {
+              return !isSidebarClosed;
             });
           }}
         >
@@ -71,22 +73,30 @@ const Sidebar = () => {
       <div className="sidebar__profile-theme"></div>
 
       <div
-        className={`sidebar__profile-content ${isSidebarOpen ? 'active' : ''}`}
+        className={`sidebar__profile-content ${
+          isSidebarClosed ? 'inactive' : ''
+        }`}
       >
         <img
           src={UserImage}
           alt="profile_picture"
-          className={`sidebar__profile-image ${isSidebarOpen ? 'active' : ''}`}
+          className={`sidebar__profile-image ${
+            isSidebarClosed ? 'inactive' : ''
+          }`}
         ></img>
         <div
-          className={`sidebar__profile-info ${isSidebarOpen ? 'active' : ''}`}
+          className={`sidebar__profile-info ${
+            isSidebarClosed ? 'inactive' : ''
+          }`}
         >
           <p className="sidebar__profile-name">Esraa Mohamed</p>
           <p className="sidebar__profile-job">Vendor</p>
         </div>
         <FontAwesomeIcon
           icon={LogoutIcon}
-          className={`sidebar__logout-icon ${isSidebarOpen ? 'active' : ''}`}
+          className={`sidebar__logout-icon ${
+            isSidebarClosed ? 'inactive' : ''
+          }`}
         />
       </div>
     </div>
