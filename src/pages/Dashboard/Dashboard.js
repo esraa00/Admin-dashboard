@@ -1,7 +1,7 @@
 import './Dashboard.css';
 
 function Dashboard() {
-  return <div className="Dashboard">Dashboard</div>;
+  return <div className="dashboard"></div>;
 }
 
 export default Dashboard;

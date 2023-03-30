@@ -28,7 +28,7 @@ const Sidebar = () => {
 
   const renderSidebarContent = elements.map((element, index) => {
     return (
-      <li key={index} data-after={element} className>
+      <li key={index} data-after={element}>
         <FontAwesomeIcon
           icon={icons[index]}
           className="element-icon"
